@@ -499,6 +499,15 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     }
 
     /**
+     * Returns the adapter currently associated with this widget.
+     *
+     * @return The adapter used to provide this view's content.
+     */
+    public SpinnerAdapter getAdapter(){
+        return mSpinner.getAdapter();
+    }
+
+    /**
      * Sets the currently selected item.
      *
      * @param position Index (starting at 0) of the data item to be selected.
