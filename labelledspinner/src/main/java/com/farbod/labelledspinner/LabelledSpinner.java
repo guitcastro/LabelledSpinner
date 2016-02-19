@@ -206,6 +206,14 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
     }
 
     /**
+     * @return The data corresponding to the currently selected item, or
+     * null if there is nothing selected.
+     */
+    public Object SelectedItem() {
+        return mSpinner.getSelectedItem();
+    }
+
+    /**
      * @return the divider line {@link android.view.View} underneath the
      * Spinner
      */
@@ -233,6 +241,30 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      */
     public void setLabelText(CharSequence labelText) {
         mLabel.setText(labelText);
+    }
+
+    /**
+     * Sets the text the label is to display.
+     *
+     * @param errorLabelTextId The string resource identifier which refers to
+     *                    the string value which is to be displayed on
+     *                    the label.
+     *
+     * @see #setLabelText(CharSequence)
+     * @see #getLabelText()
+     */
+    public void setErrorLabelText(@StringRes int errorLabelTextId) {
+        mLabel.setText(getResources().getString(errorLabelTextId));
+    }
+
+    /**
+     * Sets the text the label is to display.
+     *
+     * @param errorLabelText The CharSequence value to be displayed on the label.
+     *
+     */
+    public void setErrorLabelText(CharSequence errorLabelText) {
+        mErrorLabel.setText(errorLabelText);
     }
 
     /**
