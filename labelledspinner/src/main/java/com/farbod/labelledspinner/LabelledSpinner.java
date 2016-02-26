@@ -254,7 +254,7 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      * @see #getLabelText()
      */
     public void setErrorLabelText(@StringRes int errorLabelTextId) {
-        mLabel.setText(getResources().getString(errorLabelTextId));
+        setErrorLabelText(getResources().getString(errorLabelTextId));
     }
 
     /**
@@ -265,6 +265,13 @@ public class LabelledSpinner extends LinearLayout implements AdapterView.OnItemS
      */
     public void setErrorLabelText(CharSequence errorLabelText) {
         mErrorLabel.setText(errorLabelText);
+    }
+
+    /**
+     * @return the error text shown on the floating label
+     */
+    public CharSequence getErrorLabelText() {
+        return mErrorLabel.getText();
     }
 
     /**
